@@ -8,7 +8,7 @@
 int main() {
  int fd, count = 0;
  char buf[10];
- signal(SIGXFSZ, SIG_LGN);
+ signal(SIGXFSZ, SIG_IGN);
  fd = open("rolls.txt", O_WRONLY, O_CREAT, O_TRUNC, 0644);
  printf("Trowing the dice...\n");
  while(1) {
