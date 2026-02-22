@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
  while((bytes_read = read(fd_in, buffer, BUFFER_SIZE)) > 0) {
    bytes_written = write(fd_out, buffer, bytes_read);
    if(bytes_written == -1) {
-     if(errno == EBIG) {
+     if(errno == EFBIG) {
        printf("Error. File size limit exceeded while writing to %s!\n", argv[2]);
        printf("Copied only a part of a file.\n");
     } else {
