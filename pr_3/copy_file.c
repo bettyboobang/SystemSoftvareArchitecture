@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
  }
  char buffer[BUFFER_SIZE];
  ssize_t bytes_read, bytes_written;
- while((bytes_read = read(fd_in, buffer, BUFFER_SIZE) > 0) {
+ while((bytes_read = read(fd_in, buffer, BUFFER_SIZE)) > 0) {
    bytes_written = write(fd_out, buffer, bytes_read);
    if(bytes_written == -1) {
      if(errno == EBIG) {
