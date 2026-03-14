@@ -36,7 +36,8 @@ int main() {
    if(!heap_ptr) {perror("malloc"); exit(1); }
    strcpy((char*)heap_ptr, "Data on heap");
    pthread_t thread1, thread2;
-   int t1_id = 1; t2_id = 2;
+   int t1_id = 1;
+   int t2_id = 2;
    pthread_create(&thread1, NULL, thread_func, &t1_id);
    pthread_create(&thread2, NULL, thread_func, &t2_id);
    size_t mmap_size = 20 * 1024 * 1024;//20mb
