@@ -32,4 +32,8 @@ int main(int argc, char *argv[]) {
     printf("Usage: %s root <word_to_find> <filename>\n", argv[0]);
     printf("Example: %s root /etc/passwd\n", argv[0]);
     return EXIT_FAILURE;
+   }
+ printf("Booting up the manual grep simulation...\n\n");
+ hunt_for_the_magic_word(argv[1], argv[2]);
+ return EXIT_SUCCESS;
 }
