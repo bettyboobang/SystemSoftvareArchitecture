@@ -8,7 +8,7 @@
 #include <time.h>
 #include <string.h>
 
-void decode_permissions_likeaboss(mode_t mode, chat *str) {
+void decode_permissions_likeaboss(mode_t mode, char *str) {
  strcpy(str, "-------");
  if(S_ISDIR(mode)) str[0] = 'd';
  if(S_ISCHR(mode)) str[0] = 'c';
