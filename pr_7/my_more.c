@@ -10,7 +10,7 @@ void hold_the_gates_until_user_ready() {
 }
 
 void paginate_the_ancient_scroll(const char *filename) {
- FIlE *scroll = fopen(filename, "r");
+ FILE *scroll = fopen(filename, "r");
  if(scroll == NULL) {
    printf("Error: Failed to unroll the scroll");
    return;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
    }
  printf("Booting up the manual 'more' simulation...\n");
  for(int i = 1; i < argc; i++) {
-   paginate_the ancient_scroll(argv[i]);
+   paginate_the_ancient_scroll(argv[i]);
   }
  printf("\n>>> All reading quests have been completed\n <<<");
  return EXIT_SUCCESS;
