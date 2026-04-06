@@ -18,7 +18,7 @@ void bestow_reading_blessing(const char *filename, struct stat *file_stat) {
  scanf("%c", &response);
  int c;
  while((c = getchar()) != '\n' && c != EOF);
- if(responce == 'y' || response == 'Y') {
+ if(response == 'y' || response == 'Y') {
    if(chmod(filename, file_stat->st_mode | S_IROTH) == 0) {
      printf("[+] Blessing granted! Outsiders can now read '%s'.\n", filename);
    } else {
