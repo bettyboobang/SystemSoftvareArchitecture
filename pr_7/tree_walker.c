@@ -25,6 +25,7 @@ void map_the_endless_labyrinths(const char *base_path, int depth) {
    if (entry->d_type == DT_DIR) {
     snprintf(new_path, sizeof(new_path), "%s/%s", base_path, entry->d_name);
     map_the_endless_labyrinths(new_path, depth +1);
+   }
  }
  closedir(dir);
 }
