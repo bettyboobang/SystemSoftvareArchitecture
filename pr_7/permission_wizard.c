@@ -12,7 +12,7 @@ int is_magical_c_scroll(const char *filename) {
 }
 
 void bestow_reading_blessing(const char *filename, struct stat *file_stat) {
- char responce;
+ char response;
  printf("\nArtifact found: '%s'\n", filename);
  printf("Grant 'read' permission to outsiders? (y/n): ");
  scanf("%c", &response);
