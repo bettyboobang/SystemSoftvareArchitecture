@@ -43,7 +43,7 @@ void summon_file_metadata(const char *filename) {
  char time_str[256];
  struct tm *time_info = localtime(&file_stats.st_mtime);
  strftime(time_str, sizeof(time_str), "%b %d %H:%M", time_info);
- printf("%s %3lu %-8s %-8s %8ld %s %s\n"), permissions, (unsigned long)file_stats.st_nlink, owner ? owner->pw_name :
+ printf("%s %3lu %-8s %-8s %8ld %s %s\n", permissions, (unsigned long)file_stats.st_nlink, owner ? owner->pw_name :
  "unknown", grp ? grp->gr_name : "unknown", (long)file_stats.st_size, time_str, filename);
 }
 void reveal_the_secrets_ofdirectory(const char *path) {
@@ -53,7 +53,7 @@ void reveal_the_secrets_ofdirectory(const char *path) {
   return;
  }
  struct dirent *entry;
- printf(">>>Scaning the magical realm of '%s' <<<\n");
+ printf(">>>Scaning the magical realm of '%s' <<<\n", path);
  printf("PERMISSIONS LINKS OWNER GROUP SIZE TIME  FILENAME\n");
   while ((entry = readdir(dir)) != NULL) {
     if(entry->d_name[0] != '.') {
@@ -66,4 +66,4 @@ int main() {
  printf("Booting up the manual ls -l simulation...\n\n");
  reveal_the_secrets_ofdirectory(".");
  return 0;
-
+}
