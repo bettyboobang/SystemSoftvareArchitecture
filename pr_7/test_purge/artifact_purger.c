@@ -3,6 +3,7 @@
 #include <string.h>
 #include <dirent.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 void decide_artifact_fate(const char *filename) {
  char response;
@@ -38,9 +39,13 @@ void initiate_purge_protocol() {
     if(strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
        continue;
      }
-    if(entry->d_type == DT_REG) {
-       decide_artifact_fate(entry->d_name);
+     struct stat file_stat;
+     if(stat(entry->d_name, &file_stat) == 0) {
+       if(S_ISREG(file_stat.st_mode)) {
+          decide_artifact_fate(entry->d_name);
+        }
      }
+
   }
    closedir(dir);
    printf(">>> THE Purge Protocol has Concluded. <<<\n");
