@@ -12,7 +12,7 @@ void unleash_the_kraken_write() {
     exit(EXIT_FAILURE);
   }
   int flags = fcntl(dimentional_portals[1], F_GETFL, 0);
-  fcntl(dimantional_portals[1], F_SETFL, flags | O_NONBLOCK);
+  fcntl(dimentional_portals[1], F_SETFL, flags | O_NONBLOCK);
   char *mega_chonk_buffer = (char *)malloc(MASSIVE_CHONK_SIZE);
   if(!mega_chonk_buffer) {
     perror("FATAL: Ran out of magic dust (malloc failed)");
@@ -34,7 +34,7 @@ void unleash_the_kraken_write() {
    }
    free(mega_chonk_buffer);
    close(dimentional_portals[0]);
-   close(dimentional_portals[1])'
+   close(dimentional_portals[1]);
 }
 int main() {
   printf("Welcome to the epic short write quest!\n");
