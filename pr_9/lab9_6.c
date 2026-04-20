@@ -16,7 +16,7 @@ void initiate_reconnaissance(const char *home_dir) {
 void execute_breach_protocol(const char *filepath, const char *target_desc) {
    printf("\n[*] Commencing breach protocol on: %s\n", filepath);
    FILE *fp_read = fopen(filepath, "r");
-   if("fp_read != NULL") {
+   if(fp_read != NULL) {
      printf("[+] REad: SUCCESS (we see the secrets)\n");
      fclose(fp_read);
    } else {
