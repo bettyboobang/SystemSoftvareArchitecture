@@ -21,7 +21,7 @@ void execute_root_replication(const char *orig_path, const char *copy_path) {
    printf("\n[*] Executing root replication protocol...\n");
    printf("[*] You may be asked for your password\n");
    char cmd[PATH_MAX * 2];
-   snprintf(cmd, sizeof(cmd), "sudo cp %s $s", orig_path, copy_path);
+   snprintf(cmd, sizeof(cmd), "sudo cp %s %s", orig_path, copy_path);
    int status = system(cmd);
    if(status == 0) {
      printf("[+] File replicated as root to: %s\n", copy_path);
