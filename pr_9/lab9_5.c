@@ -49,7 +49,7 @@ void manipulate_access_matrix(const char *permissions, const char *desc) {
 
 void clean_up_evidence() {
    printf("\n[*] Cleaning up evidence...\n");
-   system("sudo rm -f" TARGET_FILE);
+   system("sudo rm -f "  TARGET_FILE);
    printf("[+] Trace eradicated.\n");
 }
 
