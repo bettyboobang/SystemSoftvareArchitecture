@@ -28,7 +28,7 @@ void simulate_nss_failure() {
    const char *type_mismatch = "alienuser:x:NOT_A_NUMBER:1002::/home/alien:/bin/bash\n";
    const char *missing_delimeter = "mutantuserx:1005:1005::/home/mutant:/bin/bash\n";
    printf("[*] Injecting healthy stream...\n");
-   analyze_account_matrix(truncated_stream);
+   analyze_account_matrix(healthy_stream);
    printf("\n[*] Injecting truncated stream...\n");
    analyze_account_matrix(truncated_stream);
    printf("\n[*] Injecting type mismatch stream...\n");
